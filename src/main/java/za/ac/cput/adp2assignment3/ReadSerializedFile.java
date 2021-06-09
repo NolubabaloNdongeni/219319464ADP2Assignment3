@@ -1,7 +1,7 @@
 
 /**
  *
- * @author nndon
+ * @author Nolubabalo Ndongeni 219319464
  */
 package za.ac.cput.adp2assignment3;
 
@@ -98,9 +98,9 @@ public class ReadSerializedFile
   
 private void writeCustomerOutFile()
 {
-    String header = "===================================CUSTOMERS============================\n";
-    String placeholder = "%s\t%-10s\t%-10s\t%-10s\n";
-    String separator = "=====================================================================\n";
+    String header = "===================================CUSTOMERS==========================================\n";
+    String placeholder = "%s\t%-10s\t%-10s\t%-10s\t%-10s\n";
+    String separator = "=====================================================================================\n";
     
     try
     {
@@ -124,7 +124,7 @@ private void writeCustomerOutFile()
 
 private String formatDate(String dob)
 {
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy", Locale.ENGLISH);
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy", Locale.ENGLISH);
     LocalDate parseDob = LocalDate.parse(dob);
     
     return parseDob.format(formatter);
@@ -132,13 +132,12 @@ private String formatDate(String dob)
 
 private int calculateAge(String dob)
 {
-    LocalDate parseDob = LocalDate.parse(dob);
-    int dobYear = parseDob.getYear();
-    
-    ZonedDateTime todayDate  = ZonedDateTime.now();
-    int currentYear = todayDate.getYear();
-    
-    return currentYear - dobYear;
+   LocalDate parseDob = LocalDate.parse(dob);
+   int dobYear = parseDob.getYear();
+   ZonedDateTime todayDate = ZonedDateTime.now();
+   int currentYear = todayDate.getYear();
+   
+   return currentYear - dobYear;
 }
 
 private int canRent()
@@ -223,7 +222,7 @@ private void writeSupplierOutFile()
 {
    String header = "===================================SUPPLIERS============================\n";
    String placeholder = "%s\t%-10s\t%-10s\t%-10s\n";
-   String separator = "=====================================================================\n";
+   String separator = "======================================================================\n";
    
    try
    {
